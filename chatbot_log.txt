@@ -1,0 +1,68 @@
+2024-02-14 14:53:41,258 - INFO - Data loaded successfully
+2024-02-14 14:53:42,201 - ERROR - Error loading embed model: `llama-index-embeddings-huggingface` package not found, please run `pip install llama-index-embeddings-huggingface`
+Traceback (most recent call last):
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 93, in resolve_embed_model
+    from llama_index.embeddings.huggingface import (
+ModuleNotFoundError: No module named 'llama_index.embeddings.huggingface'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 34, in <module>
+    Settings.embed_model = resolve_embed_model('local:BAII/bge-small-en-v1.5')
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 112, in resolve_embed_model
+    raise ImportError(
+ImportError: `llama-index-embeddings-huggingface` package not found, please run `pip install llama-index-embeddings-huggingface`
+2024-02-14 14:53:42,203 - INFO - Ollama model loaded successfully
+2024-02-14 14:53:44,026 - ERROR - Error loading index: 
+******
+Could not load OpenAI embedding model. If you intended to use OpenAI, please check your OPENAI_API_KEY.
+Original error:
+No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+Consider using embed_model='local'.
+Visit our documentation for more embedding options: https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings.html#modules
+******
+Traceback (most recent call last):
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 59, in resolve_embed_model
+    validate_openai_api_key(embed_model.api_key)
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/embeddings/openai/utils.py", line 104, in validate_openai_api_key
+    raise ValueError(MISSING_API_KEY_ERROR_MESSAGE)
+ValueError: No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 46, in <module>
+    index=VectorStoreIndex.from_documents(documents,)
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/indices/base.py", line 142, in from_documents
+    return cls(
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/indices/vector_store/base.py", line 70, in __init__
+    else embed_model_from_settings_or_context(Settings, service_context)
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/settings.py", line 276, in embed_model_from_settings_or_context
+    return settings.embed_model
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/settings.py", line 67, in embed_model
+    self._embed_model = resolve_embed_model("default")
+  File "/home/toor/.local/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 66, in resolve_embed_model
+    raise ValueError(
+ValueError: 
+******
+Could not load OpenAI embedding model. If you intended to use OpenAI, please check your OPENAI_API_KEY.
+Original error:
+No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+Consider using embed_model='local'.
+Visit our documentation for more embedding options: https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings.html#modules
+******
+2024-02-14 14:53:44,028 - ERROR - Error loading query engine: name 'index' is not defined
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 52, in <module>
+    query_engine=index.as_query_engine()
+NameError: name 'index' is not defined
