@@ -1,11 +1,14 @@
-from langchain.llms import Ollama
-from langchain.callbacks.manager import CallbackManager
-from langchain.callbacks.streaming_stdout import StreamingStdoutCallback
+from llama_index import VectorStoreIndex, SimpleDirectoryReader, Settings
+from llama_index.core.embeddings import resolve_embed_model
+from llama_index.llns.ollama import Ollama
+
+documents=SimpleDirectoryReader('data')
+
 import logger
 
 #Logger Config
 
-logger = logging.getLogger('Resumen_Exportaciones')
+logger = logging.getLogger('Chatbot')
 logger.setLevel(logging.INFO)
 
 # Crea un manejador de archivo para escribir mensajes de log en un archivo
