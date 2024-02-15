@@ -26,27 +26,34 @@ logger.addHandler(stream_handler)
 
 try:
     documents = SimpleDirectoryReader('data').load_data()
-    logger.info('Data loaded successfully')
+    logger.info(f'Sample document: {documents[4]}')
 except Exception as e:
     logger.error('Error loading data: {e}', exc_info=True)
+finally:
+    logger.info('Data loaded successfully')
 
 try:
     Settings.embed_model = resolve_embed_model('local:BAII/bge-small-en-v1.5')
-    logger.info('Embed model loaded successfully')
 except Exception as e:
     logger.error(f'Error loading embed model: {e}', exc_info=True)
+finally:
+    logger.info('Embed model loaded successfully')
+
 
 try:
     Settings.llm=Ollama(model='dolphin-mixtral',request_timeout=40)
-    logger.info('Ollama model loaded successfully')
 except Exception as e:
     logger.error(f'Error loading Ollama model: {e}', exc_info=True)
+finally:
+    logger.info('Ollama model loaded successfully')
+
 
 try:
     index=VectorStoreIndex.from_documents(documents,)
-    logger.info('Index loaded successfully')
 except Exception as e:
     logger.error(f'Error loading index: {e}', exc_info=True)
+finally:
+    logger.info('Index loaded successfully')
 
 try:
     query_engine=index.as_query_engine()
@@ -54,3 +61,5 @@ try:
     logger.info(response)
 except Exception as e:
     logger.error(f'Error loading query engine: {e}', exc_info=True)
+finally:
+    logger.info(response)

@@ -66,3 +66,118 @@ Traceback (most recent call last):
   File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 52, in <module>
     query_engine=index.as_query_engine()
 NameError: name 'index' is not defined
+2024-02-14 16:16:33,031 - INFO - Sample document: Doc ID: cafb261d-406f-4e06-a771-b6061d46bd82
+Text: expectations, or acted as if they did, but on survey data of
+what expectations are and  have been.9 So too, we were concerned with
+changes in consumption. The determination of con- sumption is,
+clearly, a key aspect of any good macro-model. But it is clear that in
+the short to medium term, the shifts in household savings rates are
+little related...
+2024-02-14 16:16:33,031 - INFO - Data loaded successfully
+2024-02-14 16:16:52,190 - ERROR - Error loading embed model: BAII/bge-small-en-v1.5 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/utils/_errors.py", line 286, in hf_raise_for_status
+    response.raise_for_status()
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/BAII/bge-small-en-v1.5/resolve/main/config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/transformers/utils/hub.py", line 385, in cached_file
+    resolved_file = hf_hub_download(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1368, in hf_hub_download
+    raise head_call_error
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1238, in hf_hub_download
+    metadata = get_hf_file_metadata(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1631, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 385, in _request_wrapper
+    response = _request_wrapper(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 409, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/huggingface_hub/utils/_errors.py", line 323, in hf_raise_for_status
+    raise RepositoryNotFoundError(message, response) from e
+huggingface_hub.utils._errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-65cd2dc1-59c7f18c21b3b02f0168c4fc;65ccdfe7-6ad8-4141-9dd6-1560bb1e8c25)
+
+Repository Not Found for url: https://huggingface.co/BAII/bge-small-en-v1.5/resolve/main/config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated.
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 36, in <module>
+    Settings.embed_model = resolve_embed_model('local:BAII/bge-small-en-v1.5')
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 108, in resolve_embed_model
+    embed_model = HuggingFaceEmbedding(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/embeddings/huggingface/base.py", line 82, in __init__
+    model = AutoModel.from_pretrained(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 488, in from_pretrained
+    resolved_config_file = cached_file(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/transformers/utils/hub.py", line 406, in cached_file
+    raise EnvironmentError(
+OSError: BAII/bge-small-en-v1.5 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2024-02-14 16:16:52,221 - INFO - Embed model loaded successfully
+2024-02-14 16:16:52,222 - INFO - Ollama model loaded successfully
+2024-02-14 16:16:55,405 - ERROR - Error loading index: 
+******
+Could not load OpenAI embedding model. If you intended to use OpenAI, please check your OPENAI_API_KEY.
+Original error:
+No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+Consider using embed_model='local'.
+Visit our documentation for more embedding options: https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings.html#modules
+******
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 59, in resolve_embed_model
+    validate_openai_api_key(embed_model.api_key)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/embeddings/openai/utils.py", line 104, in validate_openai_api_key
+    raise ValueError(MISSING_API_KEY_ERROR_MESSAGE)
+ValueError: No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 52, in <module>
+    index=VectorStoreIndex.from_documents(documents,)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/indices/base.py", line 142, in from_documents
+    return cls(
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/indices/vector_store/base.py", line 70, in __init__
+    else embed_model_from_settings_or_context(Settings, service_context)
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/settings.py", line 276, in embed_model_from_settings_or_context
+    return settings.embed_model
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/settings.py", line 67, in embed_model
+    self._embed_model = resolve_embed_model("default")
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/chatbot/lib/python3.10/site-packages/llama_index/core/embeddings/utils.py", line 66, in resolve_embed_model
+    raise ValueError(
+ValueError: 
+******
+Could not load OpenAI embedding model. If you intended to use OpenAI, please check your OPENAI_API_KEY.
+Original error:
+No API key found for OpenAI.
+Please set either the OPENAI_API_KEY environment variable or openai.api_key prior to initialization.
+API keys can be found or created at https://platform.openai.com/account/api-keys
+
+Consider using embed_model='local'.
+Visit our documentation for more embedding options: https://docs.llamaindex.ai/en/stable/module_guides/models/embeddings.html#modules
+******
+2024-02-14 16:16:55,428 - INFO - Index loaded successfully
+2024-02-14 16:16:55,429 - ERROR - Error loading query engine: name 'index' is not defined
+Traceback (most recent call last):
+  File "/mnt/c/Users/fran9/OneDrive/Documents/RandoShit/AZXcrthu/main.py", line 59, in <module>
+    query_engine=index.as_query_engine()
+NameError: name 'index' is not defined
